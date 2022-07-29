@@ -32,7 +32,7 @@ global.drone_info = '';
 let lte_data = db('./' + config.name + '_data' + '.json');
 
 try {
-    drone_info = JSON.parse(fs.readFileSync('../drone_info.json', 'utf8'));
+    drone_info = JSON.parse(fs.readFileSync('./drone_info.json', 'utf8'));
 
     config.directory_name = config.name + '_' + config.name;
     // config.sortie_name = '/' + sortie_name;
@@ -299,7 +299,7 @@ function parseDataMission(topic, str_message) {
 
         let topic_arr = topic.split('/');
         let data_topic = '/Mobius/' + config.gcs + '/Mission_Data/' + config.drone + '/' + config.name + '/' + topic_arr[topic_arr.length - 1];
-        // msw_mqtt_client.publish(data_topic + '/' + sortie_name, str_message);
+        local_msw_mqtt_client.publish(data_topic, str_message);
         msw_mqtt_client.publish(data_topic, str_message);
         sh_man.crtci(data_topic + '?rcn=0', 0, str_message, null, function (rsc, res_body, parent, socket) {
             if (rsc === '2001') {
