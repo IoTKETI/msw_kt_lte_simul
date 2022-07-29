@@ -1,0 +1,19 @@
+{
+  "name": "msw_kt_lte_simul",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "mqtt": "^4.2.6",
+    "nanoid": "^3.2.0",
+    "node-localdb": "0.0.3",
+    "shortid": "^2.2.16",
+    "serialport": "^10.4.0"
+  }
+}
